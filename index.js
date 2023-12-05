@@ -38,6 +38,8 @@ app.post('/completar', (requisicao, resposta) => {
 app.post('/descompletar', (requisicao, resposta) => {
     const id = requisicao.body.id
 
+    console.log(id)
+
     const sql = `
     UPDATE tarefas
     SET completa = '0'
@@ -69,6 +71,10 @@ app.post('/criar', (requisicao, resposta) => {
 
         resposta.redirect('/')
     })
+})
+
+app.get("/ativas", (requisicao, resposta) => {
+    
 })
 
 app.get('/', (requisicao, resposta) => {
